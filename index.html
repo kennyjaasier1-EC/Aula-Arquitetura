@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Real-Time Firebase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-header">Sala de Bate-Papo</div>
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="username" placeholder="Seu Nome" autocomplete="off" />
+            <input type="text" id="message" placeholder="Digite sua mensagem..." autocomplete="off" />
+            <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+
+    <!-- O "type=module" é necessário para importar o Firebase v9+ -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
