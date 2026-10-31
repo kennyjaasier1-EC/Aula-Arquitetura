@@ -30,14 +30,14 @@
         .container {
             max-width: 850px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* Fundo branco levemente transparente */
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             backdrop-filter: blur(5px);
         }
 
-        /* Cabeçalho com imagem de fundo e sobreposição escura */
+        /* Cabeçalho */
         header {
             background-image: linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
@@ -76,7 +76,7 @@
             padding-bottom: 5px;
         }
 
-        /* Cartões de experiência com Logo */
+        /* Cartões de experiência/formação */
         .card {
             display: flex;
             align-items: center;
@@ -94,7 +94,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* Estilo para as logos das empresas/faculdades */
         .logo-empresa {
             width: 60px;
             height: 60px;
@@ -118,33 +117,42 @@
             margin-top: 3px;
         }
 
-        /* Layout de duas colunas para Cursos e Idiomas */
+        /* Layout de duas colunas */
         .grid-2-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 12px;
-            color: #4b5563;
-            font-size: 1.05rem;
+        /* --- NOVO ESTILO PARA CURSOS --- */
+        .curso-item {
             display: flex;
             align-items: center;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            transition: transform 0.2s;
         }
 
-        /* Ícone para a lista de cursos */
-        li::before {
-            content: "•";
-            color: #10b981;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-right: 10px;
-            line-height: 1;
+        .curso-item:hover {
+            transform: translateX(5px);
+            border-color: #10b981;
+        }
+
+        .curso-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-right: 15px;
+        }
+
+        .curso-nome {
+            font-size: 1rem;
+            color: #374151;
+            font-weight: 500;
         }
 
         /* Bandeiras dos Idiomas */
@@ -152,13 +160,17 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            background-color: #f9fafb;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
         }
 
         .idioma-item img {
-            width: 30px;
-            height: 20px;
+            width: 35px;
+            height: 25px;
             object-fit: cover;
-            margin-right: 12px;
+            margin-right: 15px;
             border-radius: 3px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
@@ -202,10 +214,10 @@
             fill: currentColor;
         }
 
-        /* Responsividade para Celulares */
+        /* Responsividade */
         @media (max-width: 600px) {
             .grid-2-col {
-                grid-template-columns: 1fr; /* Uma coluna no celular */
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
             header h1 {
@@ -246,7 +258,6 @@
                 <h2>Experiência Profissional</h2>
                 
                 <div class="card">
-                    <!-- Logo TCL (Placeholder - substitua pelo link real) -->
                     <img src="https://placehold.co/120x120/ffffff/ff0000?text=TCL" alt="Logo TCL" class="logo-empresa">
                     <div class="card-info">
                         <h3>Inspetor de Qualidade CQ</h3>
@@ -255,7 +266,27 @@
                 </div>
 
                 <div class="card">
-                    <!-- Logo IFAM (Placeholder - substitua pelo link real) -->
+                    <img src="https://placehold.co/120x120/ffffff/ff9900?text=Aprendiz" alt="Logo Aprendiz" class="logo-empresa">
+                    <div class="card-info">
+                        <h3>Aprendiz</h3>
+                        <span>2023 - 2025</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formação Acadêmica -->
+            <section>
+                <h2>Formação Acadêmica</h2>
+                
+                <div class="card">
+                    <img src="https://placehold.co/120x120/ffffff/0000ff?text=FMM" alt="Logo Matias Machline" class="logo-empresa">
+                    <div class="card-info">
+                        <h3>Engenharia de Computação</h3>
+                        <span>Faculdade Matias Machline | Cursando</span>
+                    </div>
+                </div>
+
+                <div class="card">
                     <img src="https://placehold.co/120x120/ffffff/008000?text=IFAM" alt="Logo IFAM" class="logo-empresa">
                     <div class="card-info">
                         <h3>Ensino Técnico Médio em Mecatrônica</h3>
@@ -264,48 +295,49 @@
                 </div>
             </section>
 
-            <!-- Formação Acadêmica -->
-            <section>
-                <h2>Formação Acadêmica</h2>
-                <div class="card">
-                    <!-- Logo Faculdade Matias Machline (Placeholder - substitua pelo link real) -->
-                    <img src="https://placehold.co/120x120/ffffff/0000ff?text=FMM" alt="Logo Matias Machline" class="logo-empresa">
-                    <div class="card-info">
-                        <h3>Engenharia de Computação</h3>
-                        <span>Faculdade Matias Machline | Cursando</span>
-                    </div>
-                </div>
-            </section>
-
             <!-- Cursos e Idiomas -->
             <div class="grid-2-col">
-                <!-- Cursos -->
+                <!-- Cursos com Imagens -->
                 <section>
                     <h2>Cursos Complementares</h2>
-                    <ul>
-                        <li>Informática Básica</li>
-                        <li>Fotovoltaica</li>
-                        <li>Impressão 3D</li>
-                        <li>Inglês no ICBEU Manaus</li>
-                    </ul>
+                    
+                    <div class="curso-item">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=100&q=80" alt="Informática Básica" class="curso-img">
+                        <div class="curso-nome">Informática Básica</div>
+                    </div>
+
+                    <div class="curso-item">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=100&q=80" alt="Fotovoltaica" class="curso-img">
+                        <div class="curso-nome">Fotovoltaica</div>
+                    </div>
+
+                    <div class="curso-item">
+                        <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=100&q=80" alt="Impressão 3D" class="curso-img">
+                        <div class="curso-nome">Impressão 3D</div>
+                    </div>
+
+                    <div class="curso-item">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=100&q=80" alt="Inglês ICBEU" class="curso-img">
+                        <div class="curso-nome">Inglês no ICBEU Manaus</div>
+                    </div>
                 </section>
 
-                <!-- Idiomas com Bandeiras -->
+                <!-- Idiomas -->
                 <section>
                     <h2>Idiomas</h2>
                     
                     <div class="idioma-item">
-                        <img src="https://flagcdn.com/w40/es.png" alt="Bandeira da Espanha">
+                        <img src="https://flagcdn.com/w80/es.png" alt="Bandeira da Espanha">
                         <span><strong>Espanhol:</strong> Nativo</span>
                     </div>
                     
                     <div class="idioma-item">
-                        <img src="https://flagcdn.com/w40/br.png" alt="Bandeira do Brasil">
+                        <img src="https://flagcdn.com/w80/br.png" alt="Bandeira do Brasil">
                         <span><strong>Português:</strong> Fluente</span>
                     </div>
                     
                     <div class="idioma-item">
-                        <img src="https://flagcdn.com/w40/us.png" alt="Bandeira dos EUA">
+                        <img src="https://flagcdn.com/w80/us.png" alt="Bandeira dos EUA">
                         <span><strong>Inglês:</strong> Intermediário</span>
                     </div>
                 </section>
